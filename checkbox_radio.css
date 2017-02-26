@@ -1,0 +1,192 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    font-size: 30%;
+}
+
+/**
+ * 通过伪元素实现
+ */
+
+
+/**
+ * 取消checkbox/radio的样式
+ */
+
+input[type='checkbox']
+{
+    display: none;
+}
+
+input[type='radio']
+{
+    display: none;
+}
+
+/**
+ * 初始化checkbox/radio的外框
+ */
+.checkbox_wrapper
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 30px;
+    margin: 20px 10px ;
+}
+
+.radio_wrapper
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 30px;
+    margin: 20px 10px;
+}
+
+.checkbox_wrapper label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+
+    border: 1px solid #6d6d6d;
+    background-color: #fff;
+}
+
+.radio_wrapper label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+
+    border: 1px solid #6d6d6d;
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+/**
+ * 初始化checkbox/radio的内部
+ */
+.checkbox_wrapper label:after
+{
+    position: absolute;
+    top: 6px;
+    left: 7px;
+
+    width: 9px;
+    height: 5px;
+
+    content: '';
+    transform: rotate(-45deg);
+
+    opacity: 0;
+    border: 3px solid red;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+}
+
+.radio_wrapper label:after
+{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    width: 5px;
+    height: 5px;
+
+    content: '';
+
+    opacity: 0;
+    border-radius: 100%;
+    background: #f00;
+}
+
+/**
+ * 点击后边框变红色，透明度变为1
+ */
+.checkbox_wrapper input[type='checkbox']:checked + label
+{
+    border-color: #f00;
+}
+
+.checkbox_wrapper input[type='checkbox']:checked + label:after
+{
+    opacity: 1;
+}
+
+.radio_wrapper input[type='radio']:checked + label
+{
+    border-color: #f00;
+}
+
+.radio_wrapper input[type='radio']:checked + label:after
+{
+    opacity: 1;
+}
+
+/**
+ * 通过背景图实现
+ */
+
+
+
+.checkbox_wrapper2{
+  width: 500px;
+  background-color: #fff;
+
+}
+
+.checkbox_wrapper2 label{
+display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background-position: -21px -31px;
+   background-image:  url('1.png') ;
+  background-repeat: no-repeat;
+}
+
+.checkbox_wrapper2 input[type='checkbox']:checked + label
+{
+    background-position: -56px  -31px;
+}
+
+.radio_wrapper2{
+  width: 500px;
+  background-color: #fff;
+
+}
+
+.radio_wrapper2 label{
+display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background-position: -21px -9px;
+   background-image:  url('1.png') ;
+  background-repeat: no-repeat;
+}
+
+.radio_wrapper2 input[type='radio']:checked + label
+{
+    background-position: -56px  -9px;
+}
